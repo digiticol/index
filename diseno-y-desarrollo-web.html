@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digiticol - Diseño y Desarrollo Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="projects.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="pages.js" defer></script>
+    <!-- Favicom -->
+
+    <link rel="icon" href="files/images/logo-digiticol.png">
+</head>
+<body>
+
+    <!-- Header con logo y menú -->
+    <header>
+        <div class="header">
+            <div class="navbar">
+                <div class="container-logo">
+                    <a href="index.html"><img class="logo" src="files/images/logo-digiticol.png" alt="AndiWeb"></a>
+                </div>
+                <div class="navbar-menu">
+                    <nav>
+                        <ul id="MenuItems">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="index.html#servicios">Nuestros Servicios</a></li>
+                            <li><a href="index.html#quienes-somos">Quiénes Somos</a></li>
+                            <li><a href="index.html#proyectos">Nuestros Proyectos</a></li>
+                            <li><a target="_blank" href="https://api.whatsapp.com/send?phone=573213900071&amp;text=Buen%20d%C3%ADa,%20solicito%20un%20servicio">Contáctanos</a></li>
+                        </ul>
+                    </nav>
+                    <div class="main-icons">
+                        <span  class="btn-search" id="btn-search">
+                            <img src="icon/magnifying-glass-solid.svg" class="search-icon" id="search-icon">
+                        </span>
+                        <input type="checkbox" id="side-menu" class="side-menu" />
+                <label for="side-menu" class="hamb" id="hamb">
+                    <img src="icon/bars-solid.svg" class="menu-icon" id="menu-icon" onclick="menutoggle()">
+                    <img src="icon/xmark-solid.svg" class="menu-icon-x" id="menu-icon-x" onclick="menutoggle()">
+                </label>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </header>
+
+    <!---- Searcher ---->
+
+    <div id="ctn-bars-search">
+        <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+    </div>
+
+    <ul id="box-search">
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Corporativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Corporativos con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Corporativos con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Empresariales con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Empresariales con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Corporativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Corporativos con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Corporativos con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Empresariales con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Empresariales con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de E-commerce</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital de Pago</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital de Pago con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Orgánica</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Paga</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Paga con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Para las Redes Sociales</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Para las Redes Sociales de Pago</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Para las Redes Sociales Orgánica</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Para las Redes Sociales Paga</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Para SEM</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Pauta Digital Para SEO</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas E-commerce</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Redes Sociales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Servidores</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Sistemas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Sistemas TI</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Sistemas Oprativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Almacenamiento en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Aplicaciones Personalizadas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Aplicaciones Web</a></li>
+        <li><a href="index.html#blog"><i class="fa-solid fa-magnifying-glass"></i>Artículos Recientes</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Branding</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Construcción de Branding</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Imagen Corporativa</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Manual de Imagen Corporativa</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Marketing Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital de Pago</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital de Pago con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Orgánica</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Paga</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Paga con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Para las Redes Sociales</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Para las Redes Sociales de Pago</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Para las Redes Sociales Orgánica</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Para las Redes Sociales Paga</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Para SEM</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Pauta Digital Para SEO</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Posicionamiento</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Posicionamiento Web</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Publicidad Online</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada en Redes Sociales</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Asesoría Personalizada Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Automatización Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Backup</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Backup y Almacenamiento</a></li>
+        <li><a href="index.html#blog"><i class="fa-solid fa-magnifying-glass"></i>Blog</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Branding</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Branding Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Capacitación en Marketing Digital</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Cloud</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Cloud Computing</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Comercio Electrónico</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Construcción de Branding</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Consultoría Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Consultoría en Marketing Digital</a></li>
+        <li><a href="index.html#contacto"><i class="fa-solid fa-magnifying-glass"></i>Contacto</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Creación de Contenidos</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Creación de Imagen Corporativa</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Creación de Manual de Marca</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Creación de Parrilla de Contenidos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones Móviles a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones Web a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Comercio Electrónico a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Ecommerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de E-commerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Software</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Software a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Material Publicitario</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Comercio Electrónico a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Ecommerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de E-commerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Tiendas Online a La Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Tiendas Virtuales a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Tiendas Online a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Tiendas Virtuales a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Responsive</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Responsive a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Responsive UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Responsive UI/UX a la Medida</a></li>
+        <li><a href="index.html#descargar-portafolio"><i class="fa-solid fa-magnifying-glass"></i>Descargar Brochure</a></li>
+        <li><a href="index.html#descargar-portafolio"><i class="fa-solid fa-magnifying-glass"></i>Descargar Portafolio</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Logotipos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Material Publicitario</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Funcional</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Gráfico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Web Responsive</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Web Responsive UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Web UI/UX</a></li>
+        <li><a href="index.html#blog"><i class="fa-solid fa-magnifying-glass"></i>Entradas Recientes</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>E-commerce</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Estrategia Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Estrategia en Acción</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Gestión Empresarial</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Google Ads</a></li>
+        <li><a href="/"><i class="fa-solid fa-magnifying-glass"></i>Home</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Hosting</a></li>
+        <li><a href="identidad-de-marca.html"><i class="fa-solid fa-magnifying-glass"></i>Identidad de Marca</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Imagen Corporativa</a></li>
+        <li><a href="/"><i class="fa-solid fa-magnifying-glass"></i>Index</a></li>
+        <li><a href="/"><i class="fa-solid fa-magnifying-glass"></i>Inicio</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Innovación Digital</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación de Sistemas Operativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación de Sistemas Operativos Linux</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación de Sistemas Operativos Windows</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación de Software Open Source</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Sistemas Operativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Sistemas Operativos Linux</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Sistemas Operativos Windows</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Sistemas Operativos Windows y Linux</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Software Open Source</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración con Plataformas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración con Plataformas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de APIS</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de CRM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Cuentas de Correo Electrónico con el hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Cuentas de Correo Electrónico con el Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de ERP</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Software CRM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Software ERP</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Software de Servicios Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del CRM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Software CRM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Software ERP</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Software de Servicios Empresariales</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Manual de Imagen Corporativa</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales en la Nube con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales en la Nube con Microsoft Azure</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Marketing Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Marketing Digital para Redes Sociales</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Marketing Digital y SEO</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Correos Electrónicos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Páginas Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Plataformas Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Sitios Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Aplicaciones Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Correos Electrónicos otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Páginas Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Plataformas Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Sitios Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Aplicaciones Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Correos Electrónicos a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Páginas Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Plataformas Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Sitios Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Optimización de Operaciones</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Parrilla de Contenidos</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital de Pago</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital de Pago con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Orgánica</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Paga</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Paga con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Para las Redes Sociales</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Para las Redes Sociales de Pago</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Para las Redes Sociales Orgánica</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Para las Redes Sociales Paga</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Para SEM</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Pauta Digital Para SEO</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Personalización de Aplicaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Personalización de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Personalización de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento de Marca</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento de Pago</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento de Pago Con Google Ads</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento de Pago SEM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento Orgánico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento Orgánico SEO</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento Paga</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento SEO</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Posicionamiento Web</a></li>
+        <li><a href="index.html#proyectos"><i class="fa-solid fa-magnifying-glass"></i>Portafolio</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Plataformas de Gestión Empresarial</a></li>
+        <li><a href="index.html#proyectos"><i class="fa-solid fa-magnifying-glass"></i>Proyectos</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Publicidad Online</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Redacción de Contenidos</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Redes Sociales</a></li>
+        <li><a href="index.html#servicios"><i class="fa-solid fa-magnifying-glass"></i>Servicios</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios Cloud</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios Cloud Computing</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Almacenamiento en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Aplicaciones Personalizadas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Automatización Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Backup</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Backup y Almacenamiento</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Consultoría Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Consultoría en Marketing Digital</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones Móviles a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones Web a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Comercio Electrónico a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Ecommerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de E-commerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Software</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Software a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Material Publicitario</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Comercio Electrónico a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Ecommerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de E-commerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Tiendas Online a La Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Tiendas Virtuales a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Tiendas Online a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Tiendas Virtuales a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo Web a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo Web UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Logotipos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Material Publicitario</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño Funcional</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño Gráfico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño Web UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Comercio Electrónico</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Creación de Parrilla de Contenidos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Gestión Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Integración del Software de Servicios Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales en la Nube con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales en la Nube con Microsoft Azure</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Marketing Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Marketing Digital para Redes Sociales</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Marketing Digital y SEO</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Correos Electrónicos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Páginas Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Plataformas Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Sitios Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Aplicaciones Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Correos Electrónicos otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Páginas Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Plataformas Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Sitios Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Aplicaciones Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Correos Electrónicos a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Páginas Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Plataformas Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Sitios Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Optimización de Operaciones</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Parrilla de Contenidos</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital de Pago</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital de Pago con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Orgánica</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Paga</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Paga con Google Ads</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Para las Redes Sociales</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Para las Redes Sociales de Pago</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Para las Redes Sociales Orgánica</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Para las Redes Sociales Paga</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Para SEM</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Pauta Digital Para SEO</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Personalización de Aplicaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Personalización de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Personalización de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Plataformas de Gestión Empresarial</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Publicidad Online</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Redacción de Contenidos</a></li>
+        <li><a href="estrategia-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Redes Sociales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Software Open Source</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Integral</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Correctivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo y Correctivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte TI</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Integral a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Correctivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo y Correctivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte TI a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Integral Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Correctivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo y Correctivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte TI Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Integral Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Correctivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo y Correctivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte TI Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Tienda Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Tienda Virtual</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios Web Responsive</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servidores Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servidores VPS</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Sistemas Operativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Sistemas Operativos Linux</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Sistemas Operativos Windows</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Software Open Source</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Software y Licencias</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Microsoft</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales en la Nube con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales en la Nube con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Plataformas de Gestión Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Cloud</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Almacenamiento en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Aplicaciones Personalizadas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Backup</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Backup y Almacenamiento</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Cloud Computing</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Desarrollo de Software</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Desarrollo de Software a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Desarrollo Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Gestión Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Innovación de Digital</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Innovación con Digital</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Microsoft</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Microsoft</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Software</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Tecnológicas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Tecnológicas a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Tecnológicas Integradas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones TI</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Integral</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Correctivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo y Correctivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte TI</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Integral a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Correctivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo y Correctivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte TI a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Integral Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Correctivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo y Correctivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte TI Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Integral Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Correctivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo y Correctivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte TI Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Tienda Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Tienda Virtual</a></li>
+        <li><a href="index.html#blog"><i class="fa-solid fa-magnifying-glass"></i>Últimas Noticias</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>VPS</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Web Responsive</a></li>
+    </ul>
+
+    <div id="cover-ctn-search"></div>
+
+    <header>
+        <h1>Diseño y Desarrollo Web</h1>
+    </header>
+
+    <div class="content">
+        <p style="text-align: justify">Explora la innovación digital en nuestra página de Diseño y Desarrollo Web en Digiticol. Desde webs básicas hasta tiendas virtuales, cada proyecto es un testimonio de nuestra habilidad para transformar ideas en experiencias digitales impactantes. Con un enfoque centrado en el usuario, implementamos tecnologías de vanguardia y un diseño cautivador para potenciar la presencia en línea de nuestros clientes. Descubre cómo elevamos marcas a nuevos horizontes, creando sitios web que no solo impresionan sino que también funcionan. En Digiticol, tu visión cobra vida en cada clic.</p>
+    </div>
+
+    <main class="content">
+        <!-- Grids de artículos -->
+        <section class="grid-container">
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-adeco.png" alt="Adeco">
+                <p class="meta"><b>Cliente:</b> Adeco</p>
+                <a target="_blank" href="https://adecocolombia.org/"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-arttricolor.png" alt="Art Tricolor">
+                <p class="meta"><b>Cliente:</b> Art Tricolor</p>
+                <a target="_blank" href="https://artworldartistico.wixsite.com/artes"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-festival-bugarte.png" alt="Festival Bugarte">
+                <p class="meta"><b>Cliente:</b> Festival Bugarte</p>
+                <a target="_blank" href="https://bugartefestival.org/"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-hector-martinez-luna.png" alt="Hector Martínez Luna">
+                <p class="meta"><b>Cliente:</b> Hector Martínez Luna</p>
+                <a target="_blank" href="https://hectormartinezluna.info/"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-la-guevara.png" alt="Fundación Mora Guevara">
+                <p class="meta"><b>Cliente:</b> Fundación Mora Guevara</p>
+                <a target="_blank" href="https://www.fundacionmoraguevara.org/"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-limpiamar.png" alt="Limpiamar MC">
+                <p class="meta"><b>Cliente:</b> Limpiamar MC</p>
+                <a target="_blank" href="https://www.limpiamarmc.com.co/"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-mioficina.png" alt="Mi Oficina.co">
+                <p class="meta"><b>Cliente:</b> Mi Oficina.co</p>
+                <a target="_blank" href="https://mioficina.co/"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-r2publicidad.png" alt="R2 Publicidad">
+                <p class="meta"><b>Cliente:</b> R2 Publicidad</p>
+                <a target="_blank" href="https://andisystem.github.io/users-data/r2publicidad/"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <article class="grid-item">
+                <img src="files/images/diseno-y-desarrollo-web/diseno-y-desarrollo-web-univercity.png" alt="UniverCity">
+                <p class="meta"><b>Cliente:</b> UniverCity</p>
+                <a target="_blank" href="https://www.univercity.com.co/demo/univercity/"><button class="btn-cta">Ver Sitio Web</button></a>
+            </article>
+            <!-- Aquí puedes añadir más artículos -->
+        </section>
+
+        <!-- Sidebar en la derecha -->
+        <aside class="sidebar">
+            
+            <div class="recent-articles">
+                <h3>Proyectos Relacionados</h3>
+                <ul>
+                    <li><a href="identidad-de-marca.html">Identidad de Marca</a></li>
+                    <li><a href="diseno-publicitario.html">Diseño Publicitario</a></li>
+                </ul>
+            </div>
+
+            <div class="categories">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="diseno-de-logotipos.html">Diseño de Logotipos</a></li>
+                </ul>
+            </div>
+
+            <div class="share-social">
+                <h3>Compártenos en Redes Sociales</h3>
+                <!-- Iconos de redes sociales -->
+                 <!-- AddToAny BEGIN -->
+                Comparte este artículo en tus redes sociales:
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_linkedin"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_whatsapp"></a>
+                </div>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                <!-- AddToAny END -->
+            </div>
+
+            <section class="services-section">
+                <h3>Ofrecemos</h3>
+                <ul class="star-list">
+                    <li>E-commerce</li>
+                    <li>E-learning</li>
+                    <li>Web básica Informativa</li>
+                    <li>Web Corporativa</li>
+                    <li>Landing Page</li>
+                    <li>Desarrollo a la Medida</li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+
+    <!-- Modal de imagen -->
+    <div class="modal" id="modal">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <div class="modal-content">
+            <img src="" alt="Imagen ampliada" id="modalImage">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Digiticol - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
