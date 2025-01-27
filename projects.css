@@ -517,7 +517,7 @@ header h1 {
     cursor: pointer;
 }
 
-.grid-item img {
+.grid-item img, .grid-item video, .grid-item iframe {
     width: 100%;
     border-radius: 8px;
     transition: 0.5s ease all;
@@ -525,7 +525,7 @@ header h1 {
     object-fit: cover;
 }
 
-.grid-item img:hover {
+.grid-item img:hover, .grid-item video:hover, .grid-item iframe:hover {
     max-width: 100%;
     border-radius: 8px;
     transform: scale(1.1);
