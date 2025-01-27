@@ -917,7 +917,16 @@
                 <ul>
                     <li><a href="diseno-y-desarrollo-web.html">Diseño y Desarrollo Web</a></li>
                     <li><a href="diseno-de-logotipos.html">Diseño de Logotipos</a></li>
-                    <li><a href="identidad-de-marca.html">Diseño Publicitario</a></li>
+                    <li><a href="identidad-de-marca.html">Identidad de Marca</a></li>
+                </ul>
+            </div>
+
+            <div class="categories">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="ilustracion.html">Ilustración</a></li>
+                    <li><a href="diseno-de-piezas-rrss.html">Diseño de Piezas RRSS</a></li>
+                    <li><a href="produccion-audiovisual.html">Producción Audiovisual</a></li>
                 </ul>
             </div>
 
@@ -952,12 +961,22 @@
         </aside>
     </main>
 
-    <!-- Modal de imagen -->
+    <!-- Sección de comentarios y formulario -->
+    <section class="comments-section">
+        <h2>Deja tu comentario</h2>
+        <form id="comment-form">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="text" name="ciudad" placeholder="Ciudad" required>
+            <input type="text" name="pais" placeholder="País" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Modal de imagen/video -->
     <div class="modal" id="modal">
         <span class="modal-close" id="closeModal">&times;</span>
-        <div class="modal-content">
-            <img src="" alt="Imagen ampliada" id="modalImage">
-        </div>
+        <div class="modal-content" id="modalContent"></div>
     </div>
 
     <!-- Footer -->
