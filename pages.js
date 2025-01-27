@@ -87,25 +87,92 @@ inputSearch.addEventListener("keyup", function() {
 // Abre el modal y muestra la imagen seleccionada
 // Obtener elementos
 const modal = document.getElementById("modal");
-const modalImage = document.getElementById("modalImage");
+const modalContent = document.getElementById("modalContent");
 const closeModal = document.getElementById("closeModal");
 
-// Mostrar modal al hacer clic en la imagen
-document.querySelectorAll(".grid-item img").forEach(img => {
-    img.addEventListener("click", () => {
+// Mostrar modal al hacer clic en una imagen o video
+document.querySelectorAll(".grid-item img, .grid-item video").forEach(item => {
+    item.addEventListener("click", () => {
         modal.style.display = "flex";
-        modalImage.src = img.src;
+        
+        if (item.tagName === "IMG") {
+            modalContent.innerHTML = `<img src="${item.src}" alt="Imagen ampliada">`;
+        } else if (item.tagName === "VIDEO") {
+            modalContent.innerHTML = `
+                <video controls autoplay loop>
+                    <source src="${item.src}" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            `;
+        }
     });
 });
 
 // Cerrar modal
 closeModal.addEventListener("click", () => {
     modal.style.display = "none";
+    modalContent.innerHTML = ""; // Limpiar el contenido del modal
 });
 
-// Cerrar modal al hacer clic fuera de la imagen
+// Cerrar modal al hacer clic fuera del contenido
 window.addEventListener("click", (e) => {
-    if (e.target == modal) {
+    if (e.target === modal) {
         modal.style.display = "none";
+        modalContent.innerHTML = ""; // Limpiar el contenido del modal
     }
 });
+
+//Filtros para los desplegables
+
+// Seleccionamos los elementos de los filtros y los artículos
+const filterCliente = document.getElementById("filterCliente");
+const filterCategoria = document.getElementById("filterCategoria");
+const filterFormato = document.getElementById("filterFormato");
+const articles = document.querySelectorAll(".grid-item");
+const noResults = document.getElementById("noResults"); // Elemento de "sin resultados"
+
+// Función para aplicar los filtros
+function applyFilters() {
+  // Obtener los valores seleccionados
+  const selectedCliente = filterCliente.value;
+  const selectedCategoria = filterCategoria.value;
+  const selectedFormato = filterFormato.value;
+
+  let hasVisibleItems = false; // Variable para rastrear si hay coincidencias visibles
+
+  // Iterar sobre todos los artículos
+  articles.forEach(article => {
+    // Extraer los atributos del artículo
+    const cliente = article.querySelector("[data-cliente]").getAttribute("data-cliente");
+    const categorias = article.querySelector("[data-categoria]").getAttribute("data-categoria").split(" ");
+    const formatos = article.querySelector("[data-formato]").getAttribute("data-formato").split(" ");
+
+    // Verificar si el artículo cumple con los filtros
+    const matchesCliente = selectedCliente === "todos" || cliente === selectedCliente;
+    const matchesCategoria = selectedCategoria === "todos" || categorias.includes(selectedCategoria);
+    const matchesFormato = selectedFormato === "todos" || formatos.includes(selectedFormato);
+
+    // Mostrar u ocultar el artículo según los filtros
+    if (matchesCliente && matchesCategoria && matchesFormato) {
+      article.style.display = ""; // Mostrar
+      hasVisibleItems = true; // Al menos un artículo es visible
+    } else {
+      article.style.display = "none"; // Ocultar
+    }
+  });
+
+  // Mostrar u ocultar el mensaje de "sin resultados"
+  if (hasVisibleItems) {
+    noResults.style.display = "none"; // Ocultar mensaje
+  } else {
+    noResults.style.display = "block"; // Mostrar mensaje
+  }
+}
+
+// Añadir eventos de cambio a los selectores
+filterCliente.addEventListener("change", applyFilters);
+filterCategoria.addEventListener("change", applyFilters);
+filterFormato.addEventListener("change", applyFilters);
+
+// Aplicar los filtros inicialmente
+applyFilters();
