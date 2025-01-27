@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digiticol - Diseño de Piezas RRSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="projects.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="pages.js" defer></script>
+    <!-- Favicom -->
+
+    <link rel="icon" href="files/images/logo-digiticol.png">
+</head>
+<body>
+
+    <!-- Header con logo y menú -->
+    <header>
+        <div class="header">
+            <div class="navbar">
+                <div class="container-logo">
+                    <a href="index.html"><img class="logo" src="files/images/logo-digiticol.png" alt="AndiWeb"></a>
+                </div>
+                <div class="navbar-menu">
+                    <nav>
+                        <ul id="MenuItems">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="index.html#servicios">Nuestros Servicios</a></li>
+                            <li><a href="index.html#quienes-somos">Quiénes Somos</a></li>
+                            <li><a href="index.html#proyectos">Nuestros Proyectos</a></li>
+                            <li><a href="index.html#blog">Blog</a></li>
+                            <li><a href="#">Mesa de Servicio</a></li>
+                            <li><a href="#">Tienda</a></li>
+                            <li><a href="index.html#contacto">Contáctanos</a></li>
+                        </ul>
+                    </nav>
+                    <div class="main-icons">
+                        <span  class="btn-search" id="btn-search">
+                            <img src="icon/magnifying-glass-solid.svg" class="search-icon" id="search-icon">
+                        </span>
+                        <input type="checkbox" id="side-menu" class="side-menu" />
+                <label for="side-menu" class="hamb" id="hamb">
+                    <img src="icon/bars-solid.svg" class="menu-icon" id="menu-icon" onclick="menutoggle()">
+                    <img src="icon/xmark-solid.svg" class="menu-icon-x" id="menu-icon-x" onclick="menutoggle()">
+                </label>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </header>
+
+    <!---- Searcher ---->
+
+    <div id="ctn-bars-search">
+        <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+    </div>
+
+    <ul id="box-search">
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Corporativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Corporativos con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Corporativos con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Empresariales con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Empresariales con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Corporativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Corporativos con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Corporativos con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Empresariales con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Correos Electrónicos Empresariales con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Plataformas E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Servidores</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Sistemas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Sistemas TI</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Sistemas Oprativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Administración de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Almacenamiento en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Aplicaciones Personalizadas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Aplicaciones Web</a></li>
+        <li><a href="index.html#blog"><i class="fa-solid fa-magnifying-glass"></i>Artículos Recientes</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Automatización Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Backup</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Backup y Almacenamiento</a></li>
+        <li><a href="index.html#blog"><i class="fa-solid fa-magnifying-glass"></i>Blog</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Cloud</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Cloud Computing</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Comercio Electrónico</a></li>
+        <li><a href="index.html#contacto"><i class="fa-solid fa-magnifying-glass"></i>Contacto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones Móviles a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Aplicaciones Web a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Comercio Electrónico a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Ecommerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de E-commerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Software</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Software a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Material Publicitario</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Comercio Electrónico a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Ecommerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de E-commerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Tiendas Online a La Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Plataformas de Tiendas Virtuales a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Tiendas Online a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo de Tiendas Virtuales a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Responsive</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Responsive a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Responsive UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Responsive UI/UX a la Medida</a></li>
+        <li><a href="index.html#descargar-portafolio"><i class="fa-solid fa-magnifying-glass"></i>Descargar Brochure</a></li>
+        <li><a href="index.html#descargar-portafolio"><i class="fa-solid fa-magnifying-glass"></i>Descargar Portafolio</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Logotipos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Material Publicitario</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Funcional</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Gráfico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Web Responsive</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Web Responsive UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Diseño Web UI/UX</a></li>
+        <li><a href="index.html#blog"><i class="fa-solid fa-magnifying-glass"></i>Entradas Recientes</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Gestión Empresarial</a></li>
+        <li><a href="/"><i class="fa-solid fa-magnifying-glass"></i>Home</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Hosting</a></li>
+        <li><a href="/"><i class="fa-solid fa-magnifying-glass"></i>Index</a></li>
+        <li><a href="/"><i class="fa-solid fa-magnifying-glass"></i>Inicio</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Innovación Digital</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación de Sistemas Operativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación de Sistemas Operativos Linux</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación de Sistemas Operativos Windows</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación de Software Open Source</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Sistemas Operativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Sistemas Operativos Linux</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Sistemas Operativos Windows</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Sistemas Operativos Windows y Linux</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Instalación y Configuración de Software Open Source</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración con Plataformas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración con Plataformas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de APIS</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de CRM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Cuentas de Correo Electrónico con el hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Cuentas de Correo Electrónico con el Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de ERP</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Software CRM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Software ERP</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración de Software de Servicios Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Corporativo de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Corporativo de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Electrónico Empresarial de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Hosting con las cuentas de Correo Empresarial de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Corporativo de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Corporativo de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Electrónico Empresarial de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial con Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Servidor Web con las cuentas de Correo Empresarial de Office 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del CRM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Software CRM</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Software ERP</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Integración del Software de Servicios Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales en la Nube con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Máquinas Virtuales en la Nube con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Correos Electrónicos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Páginas Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Plataformas Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Sitios Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Aplicaciones Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Correos Electrónicos otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Páginas Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Plataformas Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Sitios Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Aplicaciones Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Correos Electrónicos a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Páginas Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Plataformas Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Migración de Sitios Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Optimización de Operaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Personalización de Aplicaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Personalización de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Personalización de Aplicaciones Web</a></li>
+        <li><a href="index.html#proyectos"><i class="fa-solid fa-magnifying-glass"></i>Portafolio</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Plataformas de Gestión Empresarial</a></li>
+        <li><a href="index.html#proyectos"><i class="fa-solid fa-magnifying-glass"></i>Proyectos</a></li>
+        <li><a href="index.html#servicios"><i class="fa-solid fa-magnifying-glass"></i>Servicios</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios Cloud</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios Cloud Computing</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Almacenamiento en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Aplicaciones Personalizadas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Automatización Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Backup</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Backup y Almacenamiento</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones Móviles a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Aplicaciones Web a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Comercio Electrónico a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Ecommerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de E-commerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Software</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Software a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Material Publicitario</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Comercio Electrónico a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Ecommerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de E-commerce a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Tiendas Online a La Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Plataformas de Tiendas Virtuales a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Tiendas Online a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo de Tiendas Virtuales a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo Web a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Desarrollo Web UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Logotipos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Material Publicitario</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Plataformas de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Tiendas Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño de Tiendas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño Funcional</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño Gráfico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Diseño Web UI/UX</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Comercio Electrónico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Ecommerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de E-commerce</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Gestión Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Integración del Software de Servicios Empresariales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales en la Nube con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Máquinas Virtuales en la Nube con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Correos Electrónicos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Páginas Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Plataformas Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Sitios Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Aplicaciones Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Correos Electrónicos otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Páginas Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Plataformas Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Sitios Web a otro Hosting</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Aplicaciones Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Correos Electrónicos a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Páginas Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Plataformas Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Migración de Sitios Web a otro Servidor Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Optimización de Operaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Personalización de Aplicaciones</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Personalización de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Personalización de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Plataformas de Gestión Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Software Open Source</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Integral</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Correctivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo y Correctivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte TI</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Integral a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Correctivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo y Correctivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte TI a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Integral Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Correctivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo y Correctivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte TI Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Integral Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Correctivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte Técnico Preventivo y Correctivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Soporte TI Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Tienda Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios de Tienda Virtual</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servicios Web Responsive</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servidores Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Servidores VPS</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Sistemas Operativos</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Sistemas Operativos Linux</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Sistemas Operativos Windows</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Software Open Source</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Software y Licencias</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Microsoft</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales en la Nube con Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Máquinas Virtuales en la Nube con Microsoft Azure</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Plataformas de Gestión Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Cloud</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Almacenamiento en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Aplicaciones Móviles</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Aplicaciones Personalizadas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Aplicaciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Backup</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Backup y Almacenamiento</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Cloud Computing</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Desarrollo de Software</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Desarrollo de Software a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Desarrollo Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Gestión Empresarial</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Innovación de Digital</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Innovación con Digital</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Microsoft</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones con Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Microsoft</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Microsoft 365</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones de Software</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones en la Nube</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Tecnológicas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Tecnológicas a la Medida</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Tecnológicas Integradas</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones TI</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soluciones Web</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Integral</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Correctivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo y Correctivo</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte TI</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Integral a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Correctivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo y Correctivo a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte TI a Distancia</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Integral Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Correctivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo y Correctivo Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte TI Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Integral Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Correctivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte Técnico Preventivo y Correctivo Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Soporte TI Remoto</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Tienda Online</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Tienda Virtual</a></li>
+        <li><a href="index.html#blog"><i class="fa-solid fa-magnifying-glass"></i>Últimas Noticias</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>VPS</a></li>
+        <li><a href="innovacion-digital.html"><i class="fa-solid fa-magnifying-glass"></i>Web Responsive</a></li>
+    </ul>
+
+    <div id="cover-ctn-search"></div>
+
+    <header>
+        <h1>Diseño de Piezas RRSS</h1>
+    </header>
+
+    <div class="content">
+        <p style="text-align: justify">Explora la creatividad ilimitada en nuestra página de Diseño de Piezas para Redes Sociales en Digiticol. Desde cautivadores posts hasta dinámicos reels, cada proyecto es una expresión visual diseñada para destacar en la era digital. Descubre cómo en Digiticol fusionamos estrategia y diseño para contar historias visuales que conectan, cautivan y elevan la presencia en redes sociales. Explora nuestro portafolio y sumérgete en un mundo de piezas gráficas que van más allá de lo convencional.</p>
+    </div>
+
+    <div class="filters">
+        <select id="filterCliente">
+          <option value="todos">Todos los clientes</option>
+          <option value="amway">Amway</option>
+          <option value="camcomputo">CamCómputo</option>
+          <option value="guitar-curves">Guitar Curves</option>
+          <option value="indumuebles">Indumuebles</option>
+          <option value="kores-colombia">Kores Colombia</option>
+          <option value="maped">Maped</option>
+          <option value="meicys">Meicys</option>
+          <option value="mioficina-co">Mioficina.co</option>
+          <option value="osaka-electronics">Osaka Electronics</option>
+          <option value="vizio-expert">Vizio Expert</option>
+        </select>
+      
+        <select id="filterCategoria">
+          <option value="todos">Todas las categorías</option>
+          <option value="aseo-y-hogar">Aseo y Hogar</option>
+          <option value="cosmeticos-y-belleza">Cosméticos y Belleza</option>
+          <option value="electronica">Electrónica</option>
+          <option value="industria">Industria</option>
+          <option value="lenceria">Lencería</option>
+          <option value="papeleria">Papelería</option>
+          <option value="tecnologia">Tecnología</option>
+        </select>
+      
+        <select id="filterFormato">
+          <option value="todos">Todos los formatos</option>
+          <option value="gif">GIF</option>
+          <option value="post">Post</option>
+          <option value="reel">Reel</option>
+          <option value="story">Story</option>
+        </select>
+      </div>
+
+    <main class="content">
+        <!-- Mensaje de "sin resultados" -->
+        <div id="noResults" style="display: none; text-align: center; font-size: 18px; margin-top: 20px;">
+            No se ha encontrado en los resultados de búsqueda.
+        </div>
+
+        <!-- Grids de artículos -->
+        <section class="grid-container">
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-1.gif" alt="Diseño de Piezas RRSS Kores Colombia Gif Barra Adhesiva Kores">
+                <h2>Gif Barra Adhesiva Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-2.gif" alt="Diseño de Piezas RRSS Kores Colombia Gif Borrador KE20 Negro Kores">
+                <h2>Gif Borrador KE20 Negro Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-3.gif" alt="Diseño de Piezas RRSS Kores Colombia Gif Elabora tu Personaje Favorito">
+                <h2>Gif Elabora tu Personaje Favorito</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-4.gif" alt="Diseño de Piezas RRSS Kores Colombia Gif Día de los Inocentes">
+                <h2>Gif Día de los Inocentes</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-5.gif" alt="Diseño de Piezas RRSS Kores Interacción Colores Kores">
+                <h2>Gif Interacción Colores Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-6.gif" alt="Diseño de Piezas RRSS Kores App Kores Coach">
+                <h2>Gif App Kores Coach</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-7.gif" alt="Diseño de Piezas RRSS Kores Lápices Kores">
+                <h2>Gif Lápices Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-8.gif" alt="Diseño de Piezas RRSS Kores Masikolor Kores">
+                <h2>Gif Masikolor Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-9.gif" alt="Diseño de Piezas RRSS Kores Visítanos en Bogotá Kores">
+                <h2>Gif Visítanos en Bogotá Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/gif-kores-10.gif" alt="Diseño de Piezas RRSS Kores Pegamento Korfix">
+                <h2>Gif Pegamento Korfix</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-guitar-curves-1.jpg" alt="Diseño de Piezas RRSS Post Guitar Curves">
+                <h2>Post Fajas Guitar Curves</h2>
+                <p data-cliente="guitar-curves" class="meta"><b>Cliente:</b> Guitar Curves</p>
+                <p data-categoria="lenceria" class="meta"><b>Categoría:</b> Lencería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-guitar-curves-2.jpg" alt="Diseño de Piezas RRSS Post Guitar Curves">
+                <h2>Post Fajas Guitar Curves</h2>
+                <p data-cliente="guitar-curves" class="meta"><b>Cliente:</b> Guitar Curves</p>
+                <p data-categoria="lenceria" class="meta"><b>Categoría:</b> Lencería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kit-de-aseo-amway.jpeg" alt="Diseño de Piezas RRSS Post Kit de Aseo Amway 1">
+                <h2>Post Kit de Aseo Amway 1</h2>
+                <p data-cliente="amway" class="meta"><b>Cliente:</b> Amway</p>
+                <p data-categoria="aseo-y-hogar" class="meta"><b>Categoría:</b> Aseo y Hogar</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kit-de-aseo-amway-2.png" alt="Diseño de Piezas RRSS Post Kit de Aseo Amway 2">
+                <h2>Post Kit de Aseo Amway 2</h2>
+                <p data-cliente="amway" class="meta"><b>Cliente:</b> Amway</p>
+                <p data-categoria="aseo-y-hogar" class="meta"><b>Categoría:</b> Aseo y Hogar</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="gif" src="files/images/diseno-de-piezas-rrss/Post/post-kores-1.gif" alt="Diseño de Piezas RRSS Kores Gif Día de los Inocentes Kores">
+                <h2>Gif Día de los Inocentes Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-2.jpeg" alt="Diseño de Piezas RRSS Kores Post Facebook Live Viaje a Cuba">
+                <h2>Post Facebook Live Viaje a Cuba</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-3.jpeg" alt="Diseño de Piezas RRSS Kores Post Akuarellos Kores">
+                <h2>Post Akuarellos Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-4.jpeg" alt="Diseño de Piezas RRSS Kores Post Akuarellos Kores">
+                <h2>Post Akuarellos Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-5.jpeg" alt="Diseño de Piezas RRSS Kores Post Corrector Scooter Kores">
+                <h2>Post Corrector Scooter Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-6.jpeg" alt="Diseño de Piezas RRSS Kores Post Akuarellos Kores">
+                <h2>Post Akuarellos Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-7.jpeg" alt="Diseño de Piezas RRSS Kores Post Participación Feria del Libro">
+                <h2>Post Participación Feria del Libro</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-8.jpeg" alt="Diseño de Piezas RRSS Kores Post Creatividad Kores">
+                <h2>Post Creatividad Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-9.jpeg" alt="Diseño de Piezas RRSS Kores Post Pegamento Power Glue">
+                <h2>Post Pegamento Power Glue</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-10.jpeg" alt="Diseño de Piezas RRSS Kores Plumones Korello">
+                <h2>Post Plumones Korello</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-11.jpeg" alt="Diseño de Piezas RRSS Kores Masikolor Kores">
+                <h2>Post Masikolor Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-kores-12.jpeg" alt="Diseño de Piezas RRSS Kores Creatividad Kores">
+                <h2>Post Creatividad Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-laptop-asus-camcomputo.png" alt="Diseño de Piezas RRSS Laptop X415J - EK2361 CamCómputo">
+                <h2>Post Laptop X415J - EK2361</h2>
+                <p data-cliente="camcomputo" class="meta"><b>Cliente:</b> CamCómputo</p>
+                <p data-categoria="tecnologia" class="meta"><b>Categoría:</b> Tecnología</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-maped-1.jpeg" alt="Diseño de Piezas RRSS Maped Borrador Pirámide Tatoo">
+                <h2>Post Borrador Pirámide Tatoo</h2>
+                <p data-cliente="maped" class="meta"><b>Cliente:</b> Maped</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-maped-2.jpeg" alt="Diseño de Piezas RRSS Maped Regla Study 15 cm">
+                <h2>Post Regla Study 15 cm</h2>
+                <p data-cliente="maped" class="meta"><b>Cliente:</b> Maped</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-maped-3.jpeg" alt="Diseño de Piezas RRSS Maped Post Es Genial Es Maped">
+                <h2>Post Es Genial Es Maped</h2>
+                <p data-cliente="maped" class="meta"><b>Cliente:</b> Maped</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-maped-4.jpeg" alt="Diseño de Piezas RRSS Maped Tijeras Zenoa Fit">
+                <h2>Post Tijeras Zenoa Fit</h2>
+                <p data-cliente="maped" class="meta"><b>Cliente:</b> Maped</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-maped-5.jpeg" alt="Diseño de Piezas RRSS Maped Tajalápiz Croc Croc">
+                <h2>Post Tajalápiz Croc Croc</h2>
+                <p data-cliente="maped" class="meta"><b>Cliente:</b> Maped</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-maped-6.jpeg" alt="Diseño de Piezas RRSS Maped Post Bisturí Plástico Maped">
+                <h2>Post Bisturí Plástico Maped</h2>
+                <p data-cliente="maped" class="meta"><b>Cliente:</b> Maped</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-1.jpeg" alt="Diseño de Piezas RRSS Removedor de Color Meicys">
+                <h2>Post Removedor de Color Meicys</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-2.jpeg" alt="Diseño de Piezas RRSS Splash Amor Romántico Meicys">
+                <h2>Post Splash Amor Romántico</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-3.jpeg" alt="Diseño de Piezas RRSS Shampoo Vitam Keratina Meicys">
+                <h2>Post Shampoo Vitam Keratina</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-4.jpeg" alt="Diseño de Piezas RRSS Shampoo Vitam Flexibilidad Meicys">
+                <h2>Post Shampoo Vitam Flexibilidad</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-5.jpeg" alt="Diseño de Piezas RRSS Vitan Shampoo Meicys">
+                <h2>Post Vitan Shampoo Meicys</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-6.jpeg" alt="Diseño de Piezas RRSS Alisador de Pelo Keraton Meicys">
+                <h2>Post Alisador de Pelo Keraton</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-7.jpeg" alt="Diseño de Piezas RRSS Vitan Shampoo Meicys">
+                <h2>Post Vitan Shampoo Meicys</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-8.jpeg" alt="Diseño de Piezas RRSS Fluido Capilar Meicys">
+                <h2>Post Fluido Capilar</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-meicys-9.jpeg" alt="Diseño de Piezas RRSS Tinte de Color Meicys">
+                <h2>Post Tinte de Color Meicys</h2>
+                <p data-cliente="meicys" class="meta"><b>Cliente:</b> Meicys</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-mioficina-1.jpeg" alt="Diseño de Piezas RRSS Continuidad del Negocio Mioficina.co">
+                <h2>Post Continuidad del Negocio</h2>
+                <p data-cliente="mioficina-co" class="meta"><b>Cliente:</b> Mioficina.co</p>
+                <p data-categoria="tecnologia" class="meta"><b>Categoría:</b> Tecnología</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-mioficina-2.jpeg" alt="Diseño de Piezas RRSS Campaña de Seguridad de la Información Mioficina.co">
+                <h2>Post Campaña de Seguridad de la Información</h2>
+                <p data-cliente="mioficina-co" class="meta"><b>Cliente:</b> Mioficina.co</p>
+                <p data-categoria="tecnologia" class="meta"><b>Categoría:</b> Tecnología</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-mioficina-3.jpeg" alt="Diseño de Piezas RRSS Conta Pyme Cloud Mioficina.co">
+                <h2>Post Conta Pyme Cloud</h2>
+                <p data-cliente="mioficina-co" class="meta"><b>Cliente:</b> Mioficina.co</p>
+                <p data-categoria="tecnologia" class="meta"><b>Categoría:</b> Tecnología</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-osaka-electronics-1.jpeg" alt="Diseño de Piezas RRSS Panel Solar Osaka Electronics">
+                <h2>Post Panel Solar</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-osaka-electronics-2.jpeg" alt="Diseño de Piezas RRSS Decodificador para TV Digital Osaka Electronics">
+                <h2>Post Decodificador para TV Digital</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-osaka-electronics-3.jpeg" alt="Diseño de Piezas RRSS Páneles de Energía Solar Osaka Electronics">
+                <h2>Post Páneles de Energía Solar</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-osaka-electronics-4.jpeg" alt="Diseño de Piezas RRSS Robótica Osaka Electronics">
+                <h2>Post Robótica Osaka Electronics</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-osaka-electronics-5.jpeg" alt="Diseño de Piezas RRSS Baterías Recargables Energizer Osaka Electronics">
+                <h2>Post Baterías Recargables Energizer</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-osaka-electronics-6.jpeg" alt="Diseño de Piezas RRSS Osciloscopio Digital Osaka Electronics">
+                <h2>Post Osciloscopio Digital</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-PC-HP-AIO-G4-camcomputo.png" alt="Diseño de Piezas RRSS Computador Hp Aio 200 G4 Ci5 CamCómputo">
+                <h2>Computador Hp Aio 200 G4 Ci5</h2>
+                <p data-cliente="camcomputo" class="meta"><b>Cliente:</b> CamCómputo</p>
+                <p data-categoria="tecnologia" class="meta"><b>Categoría:</b> Tecnología</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-PC-Lenovo-ThinkCentre-camcomputo.png" alt="Diseño de Piezas RRSS PC Lenovo ThinkCentre CamCómputo">
+                <h2>PC Lenovo ThinkCentre</h2>
+                <p data-cliente="camcomputo" class="meta"><b>Cliente:</b> CamCómputo</p>
+                <p data-categoria="tecnologia" class="meta"><b>Categoría:</b> Tecnología</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-1.jpeg" alt="Diseño de Piezas RRSS Vizio Reflex Vizio Expert">
+                <h2>Vizio Reflex</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-2.jpeg" alt="Diseño de Piezas RRSS Tip del Día Vizio Expert">
+                <h2>Tip del Día</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-3.jpeg" alt="Diseño de Piezas RRSS Shampoo Vizio sin Sal Vizio Expert">
+                <h2>Shampoo Vizio sin Sal</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-4.jpeg" alt="Diseño de Piezas RRSS Guajira Vizio Expert">
+                <h2>Guajira</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-5.jpeg" alt="Diseño de Piezas RRSS Tono 34 Vizio Expert">
+                <h2>Tono 34</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-6.jpeg" alt="Diseño de Piezas RRSS Tono 44 Vizio Expert">
+                <h2>Tono 44</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-7.jpeg" alt="Diseño de Piezas RRSS Aceite de Argán Vizio Expert">
+                <h2>Aceite de Argán</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-8.jpeg" alt="Diseño de Piezas RRSS Vizio Oil Spa Vizio Expert">
+                <h2>Vizio Oil Spa</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-9.jpeg" alt="Diseño de Piezas RRSS Bloqueador Solar Guajira Vizio Expert">
+                <h2>Bloqueador Solar Guajira</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-10.jpeg" alt="Diseño de Piezas RRSS Tratamiento Hidratante Revitalizante Crece Pelo Vizio Expert">
+                <h2>Tratamiento Hidratante Revitalizante Crece Pelo</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-vizio-expert-12.jpeg" alt="Diseño de Piezas RRSS Guajira Vizio Expert">
+                <h2>Guajira</h2>
+                <p data-cliente="vizio-expert" class="meta"><b>Cliente:</b> Vizio Expert</p>
+                <p data-categoria="cosmeticos-y-belleza" class="meta"><b>Categoría:</b> Cosméticos y Belleza</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="post" src="files/images/diseno-de-piezas-rrss/Post/post-convocatoria-indumuebles.png" alt="Diseño de Piezas RRSS Convocatoria Indumuebles">
+                <h2>Post Convocatoria</h2>
+                <p data-cliente="indumuebles" class="meta"><b>Cliente:</b> Indumuebles</p>
+                <p data-categoria="industria" class="meta"><b>Categoría:</b> Industria</p>
+            </article>
+            <article class="grid-item">
+                <video data-formato="reel" src="files/images/diseno-de-piezas-rrss/Reels/reel-indumuebles-1.mp4" controls muted loop>
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+                <h2>Reel detrás de cada diseño excepcional</h2>
+                <p data-cliente="indumuebles" class="meta"><b>Cliente:</b> Indumuebles</p>
+                <p data-categoria="industria" class="meta"><b>Categoría:</b> Industria</p>
+            </article>
+            <article class="grid-item">
+                <video data-formato="story" src="files/images/diseno-de-piezas-rrss/Reels/reel-indumuebles-2.mp4" controls muted loop>
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+                <h2>Story Silla Winner Presidente</h2>
+                <p data-cliente="indumuebles" class="meta"><b>Cliente:</b> Indumuebles</p>
+                <p data-categoria="industria" class="meta"><b>Categoría:</b> Industria</p>
+            </article>
+            <article class="grid-item">
+                <video data-formato="story reel" src="files/images/diseno-de-piezas-rrss/Reels/reel-indumuebles-3.mp4" controls muted loop>
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+                <h2>Proyecto Antes y Después</h2>
+                <p data-cliente="indumuebles" class="meta"><b>Cliente:</b> Indumuebles</p>
+                <p data-categoria="industria" class="meta"><b>Categoría:</b> Industria</p>
+            </article>
+            <article class="grid-item">
+                <video data-formato="reel" src="files/images/diseno-de-piezas-rrss/Reels/reel-testimonios-indumuebles.mp4" controls muted loop>
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+                <h2>Testimonio de Cliente Satisfecho</h2>
+                <p data-cliente="indumuebles" class="meta"><b>Cliente:</b> Indumuebles</p>
+                <p data-categoria="industria" class="meta"><b>Categoría:</b> Industria</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-kores-1.gif" alt="Diseño de Piezas RRSS Story Día del Amor y Amistad Kores Colombia">
+                <h2>Story Día del Amor y Amistad</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-kores-2.gif" alt="Diseño de Piezas RRSS Story Mes Naranja del Año Kores Colombia">
+                <h2>Story Mes Naranja del Año</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-kores-3.gif" alt="Diseño de Piezas RRSS Story Story Interactivo Kores Colombia">
+                <h2>Story Interactivo</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-kores-4.gif" alt="Diseño de Piezas RRSS Story Krea con Kores Kores Colombia">
+                <h2>Story Krea con Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-kores-5.gif" alt="Diseño de Piezas RRSS Story Manualidades Kores Kores Colombia">
+                <h2>Story Manualidades Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-kores-6.gif" alt="Diseño de Piezas RRSS Story Expectativa Gánate un Premio con Kores Kores Colombia">
+                <h2>Story Expectativa Gánate un Premio con Kores</h2>
+                <p data-cliente="kores-colombia" class="meta"><b>Cliente:</b> Kores Colombia</p>
+                <p data-categoria="papeleria" class="meta"><b>Categoría:</b> Papelería</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-osaka-electronics-1.gif" alt="Diseño de Piezas RRSS Story Accesorios de Electrónica Osaka Electronics">
+                <h2>Story Accesorios de Electrónica</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-osaka-electronics-2.gif" alt="Diseño de Piezas RRSS Story Frase Motivacional Osaka Electronics">
+                <h2>Story Frase Motivacional</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <article class="grid-item">
+                <img data-formato="story gif" src="files/images/diseno-de-piezas-rrss/Reels/reel-osaka-electronics-3.gif" alt="Diseño de Piezas RRSS Story Interactivo Osaka Electronics">
+                <h2>Story Interactivo</h2>
+                <p data-cliente="osaka-electronics" class="meta"><b>Cliente:</b> Osaka Electronics</p>
+                <p data-categoria="electronica" class="meta"><b>Categoría:</b> Electrónica</p>
+            </article>
+            <!-- Aquí puedes añadir más artículos -->
+        </section>
+
+        <!-- Sidebar en la derecha -->
+        <aside class="sidebar">
+            
+            <div class="recent-articles">
+                <h3>Proyectos Relacionados</h3>
+                <ul>
+                    <li><a href="diseno-publicitario.html">Diseño Publicitario</a></li>
+                    <li><a href="diseno-y-desarrollo-web.html">Diseño y Desarrollo Web</a></li>
+                    <li><a href="produccion-audiovisual.html">Producción Audiovisual</a></li>
+                </ul>
+            </div>
+
+            <div class="categories">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="ilustracion.html">Ilustración</a></li>
+                    <li><a href="diseno-de-logotipos.html">Diseño de Logotipos</a></li>
+                    <li><a href="identidad-de-marca.html">Identidad de Marca</a></li>
+                </ul>
+            </div>
+
+            <div class="share-social">
+                <h3>Compártenos en Redes Sociales</h3>
+                <!-- Iconos de redes sociales -->
+                 <!-- AddToAny BEGIN -->
+                Comparte este artículo en tus redes sociales:
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_linkedin"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_whatsapp"></a>
+                </div>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+                <section class="services-section">
+                    <h3>Ofrecemos Estrategia</h3>
+                    <ul class="star-list">
+                        <li>Storytelling</li>
+                        <li>Funnels utilizados bajo el concepto AIDA</li>
+                        <li>Frases de inspiración o mensajes motivacionales</li>
+                        <li>Links con Llamada a la acción para entrar a una página o portal web</li>
+                        <li>Concursos y dinámicas de participación activa de la audiencia
+                        </li>
+                    </ul>
+                </section>
+                <!-- AddToAny END -->
+            </div>
+        </aside>
+    </main>
+
+    <!-- Sección de comentarios y frio -->
+    <section class="comments-section">
+        <h2>Deja tu comentario</h2>
+        <form id="comment-form">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="text" name="ciudad" placeholder="Ciudad" required>
+            <input type="text" name="pais" placeholder="País" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <button type="submit">Enviar<ormula/button>
+        </form>
+    </section>
+
+    <!-- Modal de imagen/video -->
+    <div class="modal" id="modal">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Digiticol - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
