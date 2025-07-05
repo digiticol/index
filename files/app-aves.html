@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Interactiva de Aves</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to right, #f0f8ff, #e0f7fa);
+      color: #333;
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #2e7d32;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .search-bar input {
+      width: 90%;
+      max-width: 600px;
+      padding: 0.75rem;
+      border: 2px solid #4caf50;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .filters select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #4caf50;
+    }
+
+    .view-toggle, .lang-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .view-btn, .lang-btn {
+      background-color: #4caf50;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .view-btn.active, .lang-btn.active {
+      background-color: #2e7d32;
+    }
+
+    .grid, .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .list {
+      display: none;
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .list .card {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .list .card img {
+      width: 150px;
+      height: 100px;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .card-content {
+      padding: 1rem;
+      flex-grow: 1;
+    }
+
+    .card-content h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #00796b;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .modal-content {
+      background-color: white;
+      width: 100%;
+      max-width: 600px;
+      padding: 1.5rem;
+      border-radius: 10px;
+      position: relative;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content audio {
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #d32f2f;
+    }
+
+    .no-results {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #777;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .card-content h2 {
+        font-size: 1rem;
+      }
+      .card-content p {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="mainTitle">Guía Interactiva de Aves</h1>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="changeLanguage('es')">Español</button>
+      <button class="lang-btn" onclick="changeLanguage('en')">English</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar por nombre común o científico...">
+    </div>
+    <div class="filters">
+      <select id="filterOrder">
+        <option value="">Filtrar por orden</option>
+        <option value="Anseriformes">Anseriformes</option>
+        <option value="Apodiformes">Apodiformes</option>
+        <option value="Piciformes">Piciformes</option>
+        <option value="Passeriformes">Passeriformes</option>
+        <option value="Strigiformes">Strigiformes</option>
+      </select>
+      <select id="filterGenus">
+        <option value="">Filtrar por género</option>
+        <option value="Aglaeactis">Aglaeactis</option>
+        <option value="Merganetta">Merganetta</option>
+        <option value="Glaucidium">Glaucidium</option>
+        <option value="Piculus">Piculus</option>
+        <option value="Ramphastos">Ramphastos</option>
+        <option value="Turdus">Turdus</option>
+      </select>
+      <select id="filterSpecies">
+        <option value="">Filtrar por especie</option>
+        <option value="Armata">Armata</option>
+        <option value="Cupripennis">Cupripennis</option>
+        <option value="Jardinii">Jardinii</option>
+        <option value="sulfuratus">sulfuratus</option>
+        <option value="Litae">Litae</option>
+        <option value="migratorius">migratorius</option>
+      </select>
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" onclick="toggleView('grid')">
+        <i class="fas fa-th"></i> Cuadrícula
+      </button>
+      <button class="view-btn" onclick="toggleView('list')">
+        <i class="fas fa-list"></i> Lista
+      </button>
+    </div>
+  </header>
+
+  <section class="grid" id="birdGrid"></section>
+  <section class="list" id="birdList"></section>
+  <div class="no-results" id="noResults" style="display:none;">No se encontraron resultados de búsqueda.</div>
+
+  <div id="modal">
+    <div class="modal-content" id="modalContent">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+    </div>
+  </div>
+
+  <script>
+    let currentLang = 'es';
+
+    const translations = {
+      es: {
+        title: "Guía Interactiva de Aves",
+        search: "Buscar por nombre común o científico...",
+        grid: "Cuadrícula",
+        list: "Lista",
+        notFound: "No se encontraron resultados de búsqueda.",
+        classification: "Clasificación",
+        birdSong: "Canto del ave:",
+        indigenousAudio: "Audio indígena:"
+      },
+      en: {
+        title: "Interactive Bird Guide",
+        search: "Search by common or scientific name...",
+        grid: "Grid",
+        list: "List",
+        notFound: "No search results found.",
+        classification: "Classification",
+        birdSong: "Bird song:",
+        indigenousAudio: "Indigenous audio:"
+      }
+    };
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-btn[onclick="changeLanguage('${lang}')"]`).classList.add('active');
+
+      const t = translations[lang];
+      document.getElementById('mainTitle').textContent = t.title;
+      document.getElementById('searchInput').placeholder = t.search;
+      document.querySelector(".view-btn[onclick=\"toggleView('grid')\"]").innerHTML = `<i class="fas fa-th"></i> ${t.grid}`;
+      document.querySelector(".view-btn[onclick=\"toggleView('list')\"]").innerHTML = `<i class="fas fa-list"></i> ${t.list}`;
+      document.getElementById('noResults').textContent = t.notFound;
+      applyFilters();
+    }
+
+    const birds = [
+      {
+        name: "Tucán",
+        scientific: "Ramphastos sulfuratus",
+        order: "Piciformes",
+        genus: "Ramphastos",
+        species: "sulfuratus",
+        img: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Ramphastos_toco_-Birdworld%2C_Farnham%2C_Surrey%2C_England-8a.jpg",
+        desc: "Habita en selvas húmedas desde el sur de México hasta Colombia. Se alimenta de frutas, insectos y pequeños reptiles.",
+        song: "https://www.xeno-canto.org/sounds/uploaded/OOECJKPLFJ/XC631967-keel-billedtucan.mp3",
+        indigenous: "https://example.com/audio-indigena.mp3"
+      },
+      {
+        name: "Pato de los Torrentes",
+        scientific: "Merganetta armata",
+        order: "Anseriformes",
+        genus: "Merganetta",
+        species: "Armata",
+        img: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Merganetta_armata_%28Pato_de_torrentes%29_-_Macho_%2816286015670%29.jpg",
+        desc: "Nombre de origen griego y latín por su apariencia armada. Vive entre 1500 y 3500 msnm en ríos andinos. Se alimenta de larvas acuáticas y macroinvertebrados.",
+        song: "https://www.xeno-canto.org/sounds/uploaded/OOECJKPLFJ/XC631967-keel-billedtucan.mp3",
+        indigenous: "https://example.com/audio-indigena.mp3"
+      },
+      {
+        name: "Colibrí paramuno",
+        scientific: "Aglaeactis cupripennis",
+        order: "Apodiformes",
+        genus: "Aglaeactis",
+        species: "Cupripennis",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAInJxBolUYd2qTLIOce23YOhsUX3jben9SA&s",
+        desc: "Su nombre significa “esplendor alado de cobre”. Habita entre los 2100 y 3400 msnm en la transición entre bosque montano y páramo. Se alimenta de néctar de Puya, Bomarea, Fuchsia y Centropogon. Observado en Alto Pance, Tenerife (El Cerrito) y Barragán (Alto Buga).",
+        song: "https://www.xeno-canto.org/sounds/uploaded/OOECJKPLFJ/XC631967-keel-billedtucan.mp3",
+        indigenous: "https://example.com/audio-indigena.mp3"
+      },
+      {
+        name: "Buhíto Andino",
+        scientific: "Glaucidium jardinii",
+        order: "Strigiformes",
+        genus: "Glaucidium",
+        species: "Jardinii",
+        img: "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/420316511/1200",
+        desc: "Su nombre significa “búho pequeño” y honra al ornitólogo William Jardine. Vive entre los 2100 y 2800 msnm en bosques húmedos y de niebla. Usa el dosel y bordes del bosque. Se alimenta de aves e insectos grandes. Observado en Alto Pance, Tenerife (El Cerrito) y Barragán (Alto Buga).",
+        song: "https://www.xeno-canto.org/sounds/uploaded/OOECJKPLFJ/XC631967-keel-billedtucan.mp3",
+        indigenous: "https://example.com/audio-indigena.mp3"
+      },
+      {
+        name: "Carpintero de Lita",
+        scientific: "Piculus litae",
+        order: "Piciformes",
+        genus: "Piculus",
+        species: "Litae",
+        img: "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/178813771/900",
+        desc: "Su nombre alude al rey mitológico Picus y a la localidad de Lita (Ecuador). Habita entre 0 y 800 msnm en bosques húmedos del Pacífico, especialmente en bordes. Probablemente se alimenta de insectos y larvas. Observado en Bajo Anchicayá, Alto Potedó, San Cipriano y La Delfina (Buenaventura).",
+        song: "https://www.xeno-canto.org/sounds/uploaded/OOECJKPLFJ/XC631967-keel-billedtucan.mp3",
+        indigenous: "https://example.com/audio-indigena.mp3"
+      }
+    ];
+
+    const grid = document.getElementById("birdGrid");
+    const list = document.getElementById("birdList");
+    const searchInput = document.getElementById("searchInput");
+    const filterOrder = document.getElementById("filterOrder");
+    const filterGenus = document.getElementById("filterGenus");
+    const filterSpecies = document.getElementById("filterSpecies");
+    const noResults = document.getElementById("noResults");
+
+    let currentView = 'grid';
+
+    function renderBirds(listData) {
+      grid.innerHTML = "";
+      list.innerHTML = "";
+      noResults.style.display = listData.length === 0 ? 'block' : 'none';
+
+      listData.forEach((bird) => {
+        const cardHTML = `
+          <div class="card" onclick="openModal(${JSON.stringify(bird).replace(/"/g, '&quot;')})">
+            <img src="${bird.img}" alt="${bird.name}">
+            <div class="card-content">
+              <h2>${bird.name}</h2>
+              <p><strong>${bird.scientific}</strong></p>
+              <p>${bird.order}, ${bird.genus}, ${bird.species}</p>
+              <p>${bird.desc.substring(0, 60)}...</p>
+            </div>
+          </div>
+        `;
+        grid.insertAdjacentHTML("beforeend", cardHTML);
+        list.insertAdjacentHTML("beforeend", cardHTML);
+      });
+
+      grid.style.display = currentView === 'grid' ? 'grid' : 'none';
+      list.style.display = currentView === 'list' ? 'grid' : 'none';
+    }
+
+    function openModal(birdData) {
+      const modal = document.getElementById("modal");
+      const content = document.getElementById("modalContent");
+      content.innerHTML = `
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img src="${birdData.img}" alt="${birdData.name}">
+        <h2>${birdData.name} (<em>${birdData.scientific}</em>)</h2>
+        <p><strong>Clasificación:</strong> ${birdData.order}, ${birdData.genus}, ${birdData.species}</p>
+        <p>${birdData.desc}</p>
+        <h3>Canto del ave:</h3>
+        <audio controls src="${birdData.song}"></audio>
+        <h3>Audio indígena:</h3>
+        <audio controls src="${birdData.indigenous}"></audio>
+      `;
+      modal.style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    function applyFilters() {
+      const term = searchInput.value.toLowerCase();
+      const ord = filterOrder.value;
+      const gen = filterGenus.value;
+      const spe = filterSpecies.value;
+
+      const filtered = birds.filter(b => {
+        return (
+          (b.name.toLowerCase().includes(term) || b.scientific.toLowerCase().includes(term) || b.desc.toLowerCase().includes(term)) &&
+          (!ord || b.order === ord) &&
+          (!gen || b.genus === gen) &&
+          (!spe || b.species === spe)
+        );
+      });
+      renderBirds(filtered);
+    }
+
+    function toggleView(view) {
+      currentView = view;
+      document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.view-btn[onclick="toggleView('${view}')"]`).classList.add('active');
+      applyFilters();
+    }
+
+    searchInput.addEventListener("input", applyFilters);
+    filterOrder.addEventListener("change", applyFilters);
+    filterGenus.addEventListener("change", applyFilters);
+    filterSpecies.addEventListener("change", applyFilters);
+
+    renderBirds(birds);
+  </script>
+</body>
+
+</html>
