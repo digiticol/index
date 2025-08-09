@@ -20,21 +20,29 @@ var MenuItems = document.getElementById("MenuItems");
 // Ajustar desplazamiento para evitar que el encabezado tape el título
 document.querySelectorAll('.navbar-menu a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        // Calcula la altura del encabezado
-        const headerHeight = document.querySelector('.header').offsetHeight;
-        
-        // Calcula la posición de desplazamiento
-        const targetPosition = targetElement.offsetTop - headerHeight;
+        const href = this.getAttribute('href');
 
-        // Realiza el desplazamiento suave
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
+        // Enlace interno (scroll suave)
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        } 
+        // Enlace externo (WhatsApp, Helpdesk, etc.)
+        else {
+            e.preventDefault();
+            window.open(href, '_blank'); // Abrir en nueva pestaña
+        }
     });
 });
 
@@ -165,3 +173,4 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
+
