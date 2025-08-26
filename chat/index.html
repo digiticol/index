@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexa - Asistente Inteligente de Digiticol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f23;
+            color: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: #171717;
+            border-right: 1px solid #2d2d2d;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #2d2d2d;
+        }
+
+        .new-chat-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #10a37f, #0c8a5f);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .new-chat-btn:hover {
+            background: linear-gradient(90deg, #0c8a5f, #0a7350);
+            transform: translateY(-1px);
+        }
+
+        .chat-history {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .chat-item {
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+        .chat-item:hover {
+            background: #2d2d2d;
+        }
+
+        .chat-item.active {
+            background: #2d2d2d;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .header {
+            padding: 16px 24px;
+            border-bottom: 1px solid #2d2d2d;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .model-info {
+            background: #2d2d2d;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10a37f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Chat Area */
+        .chat-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            max-width: 800px;
+            margin: 0 auto 24px;
+            display: flex;
+            gap: 16px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 12px;
+        }
+
+        .user-avatar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .ai-avatar {
+            background: linear-gradient(135deg, #10a37f 0%, #0c8a5f 100%);
+        }
+
+        .message-content {
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message.user .message-content {
+            background: #2d2d2d;
+            padding: 12px 16px;
+            border-radius: 18px 18px 4px 18px;
+        }
+
+        .message.bot .message-content {
+            padding: 12px 0;
+        }
+
+        .message.bot .message-content p {
+            margin-bottom: 16px !important;
+            line-height: 1.6 !important;
+            color: #ffffff !important;
+        }
+
+        .message.bot .message-content p:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .message.bot .message-content ul {
+            margin: 16px 0 !important;
+            padding-left: 24px !important;
+            list-style-type: disc !important;
+            list-style-position: outside !important;
+        }
+
+        .message.bot .message-content ol {
+            margin: 16px 0 !important;
+            padding-left: 24px !important;
+            list-style-type: decimal !important;
+            list-style-position: outside !important;
+        }
+
+        .message.bot .message-content li {
+            margin-bottom: 8px !important;
+            line-height: 1.5 !important;
+            color: #ffffff !important;
+            display: list-item !important;
+        }
+
+        .message.bot .message-content ul li::marker {
+            color: #10a37f !important;
+            font-size: 1.2em !important;
+        }
+
+        .message.bot .message-content ol li::marker {
+            color: #10a37f !important;
+            font-weight: bold !important;
+        }
+
+        .message.bot .message-content a {
+            color: #10a37f !important;
+            text-decoration: underline !important;
+            transition: color 0.2s !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+        }
+
+        .message.bot .message-content a:hover {
+            color: #0c8a5f !important;
+        }
+
+        .message.bot .message-content strong {
+            font-weight: 600 !important;
+            color: #ffffff !important;
+        }
+
+        .message.bot .message-content em {
+            font-style: italic !important;
+            color: #e0e0e0 !important;
+        }
+
+        /* Input Area */
+        .input-area {
+            padding: 20px 24px;
+            border-top: 1px solid #2d2d2d;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .input-container {
+            position: relative;
+            background: #2d2d2d;
+            border-radius: 12px;
+            padding: 12px 50px 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .message-input {
+            flex: 1;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+            min-height: 24px;
+            max-height: 120px;
+            line-height: 1.5;
+        }
+
+        .message-input::placeholder {
+            color: #8e8ea0;
+        }
+
+        .send-button {
+            position: absolute;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #10a37f, #0c8a5f);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .send-button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #0c8a5f, #0a7350);
+            transform: scale(1.05);
+        }
+
+        .send-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Welcome Screen */
+        .welcome-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .welcome-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #10a37f, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .welcome-subtitle {
+            font-size: 18px;
+            color: #8e8ea0;
+            margin-bottom: 40px;
+        }
+
+        .suggestions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .suggestion-card {
+            background: #2d2d2d;
+            border: 1px solid #404040;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .suggestion-card:hover {
+            background: #404040;
+            transform: translateY(-2px);
+        }
+
+        .suggestion-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .suggestion-desc {
+            color: #8e8ea0;
+            font-size: 14px;
+        }
+
+        /* Typing Animation */
+        .typing-indicator {
+            display: flex;
+            gap: 6px;
+            padding: 16px 0;
+            align-items: center;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #10a37f;
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite ease-in-out;
+            opacity: 0.4;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% { 
+                transform: translateY(0); 
+                opacity: 0.4;
+            }
+            30% { 
+                transform: translateY(-12px); 
+                opacity: 1;
+            }
+        }
+
+        /* Efecto de aparición del mensaje del bot */
+        .bot-message-appearing {
+            animation: messageAppear 0.5s ease-out;
+        }
+
+        @keyframes messageAppear {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* Error message styles */
+        .error-message {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid #ff6b6b;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            color: #ff6b6b;
+        }
+
+        /* Debug info */
+        .debug-info {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #2d2d2d;
+            border: 1px solid #404040;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 12px;
+            max-width: 300px;
+            z-index: 1000;
+            display: none;
+        }
+
+        /* Loading indicator */
+        .loading-info {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2d2d2d;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100%;
+                z-index: 1000;
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .suggestions {
+                grid-template-columns: 1fr;
+            }
+
+            .message {
+                margin-bottom: 16px;
+            }
+
+            .input-area {
+                padding: 16px;
+            }
+
+            .debug-info {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 10px 0;
+                max-width: none;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #404040;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Overlay para mobile cuando sidebar está abierto */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar-overlay.show {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Overlay for mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" onclick="startNewChat()">
+                    + Nueva Conversación
+                </button>
+            </div>
+            <div class="chat-history" id="chatHistory">
+                <!-- Chat history will be populated here -->
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="model-info">
+                    <div class="status-indicator" id="statusIndicator"></div>
+                    <span id="modelStatus">Cargando modelo...</span>
+                </div>
+            </div>
+
+            <div class="chat-area" id="chatArea">
+                <div class="welcome-screen" id="welcomeScreen">
+                    <h1 class="welcome-title">¡Hola! Soy Alexa</h1>
+                    <p class="welcome-subtitle">Experta en Marketing y Ventas, Soluciones Tecnológicas, Seguridad Informática, Infraestructura Cloud, Privacidad Digital, Análisis de Datos y Desarrollo de Software de Digiticol</p>
+                    <div class="suggestions">
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Cómo puedo crear una estrategia de marketing para mi negocio?')">
+                            <div class="suggestion-title">Estrategia de Marketing</div>
+                            <div class="suggestion-desc">Ayuda para crear estrategias efectivas</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Qué contenido funciona mejor en redes sociales?')">
+                            <div class="suggestion-title">Redes Sociales</div>
+                            <div class="suggestion-desc">Consejos para contenido viral</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Cómo puedo mejorar mi marca personal?')">
+                            <div class="suggestion-title">Branding</div>
+                            <div class="suggestion-desc">Construcción y gestión de marca</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Qué técnicas de ventas son más efectivas?')">
+                            <div class="suggestion-title">Técnicas de Ventas</div>
+                            <div class="suggestion-desc">Estrategias para cerrar más ventas</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Cómo puede ayudarme la inteligencia artificial en mi negocio?')">
+                            <div class="suggestion-title">IA para tu Negocio</div>
+                            <div class="suggestion-desc">Cómo usar la IA y qué ventajas trae para tu negocio</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿dónde operan y cómo puedo contactarlos?')">
+                            <div class="suggestion-title">Canales de distribución</div>
+                            <div class="suggestion-desc">Conoce nuestros canales de distribución</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <form id="chatForm">
+                    <div class="input-container">
+                        <textarea 
+                            class="message-input" 
+                            id="messageInput" 
+                            placeholder="Escribe tu mensaje aquí..."
+                            rows="1"
+                            onkeydown="handleKeyPress(event)"
+                            oninput="adjustTextareaHeight(this)"
+                        ></textarea>
+                        <button type="submit" class="send-button" id="sendButton">
+                            →
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Debug info panel -->
+    <div class="debug-info" id="debugInfo">
+        <div style="font-weight: bold; margin-bottom: 8px;">Debug Info:</div>
+        <div id="debugContent">Activar modo debug para ver información...</div>
+    </div>
+
+    <div class="loading-info" id="loadingInfo" style="display: none;">
+        <span id="loadingText">Inicializando modelo...</span>
+    </div>
+
+    <script type="module">
+        // Configuración
+        const CONFIG = {
+            DEBUG_MODE: true, // Cambiar a false en producción
+            WEBHOOK: {
+                url: 'https://digiticolwebhookn8n.digiticol.com/webhook/9ca12b1b-1856-4cd1-a636-6a87f4c81b37/chat',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                timeout: 30000 // 30 segundos
+            },
+            RETRY: {
+                maxAttempts: 3,
+                delay: 1000 // 1 segundo entre intentos
+            }
+        };
+
+        // Global variables
+        let currentChatId = null;
+        let chatHistory = {};
+        let messageCounter = 0;
+        let isTyping = false;
+        let sessionId = generateSessionId();
+        let messages = [];
+        
+        // DOM elements
+        const $form = document.getElementById('chatForm');
+        const $input = document.getElementById('messageInput');
+        const $sendButton = document.getElementById('sendButton');
+        const $chatArea = document.getElementById('chatArea');
+        const $loadingInfo = document.getElementById('loadingInfo');
+        const $loadingText = document.getElementById('loadingText');
+        const $modelStatus = document.getElementById('modelStatus');
+        const $statusIndicator = document.getElementById('statusIndicator');
+        const $debugInfo = document.getElementById('debugInfo');
+        const $debugContent = document.getElementById('debugContent');
+
+        // Utility functions
+        function generateSessionId() {
+            return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function logDebug(message, data = null) {
+            if (CONFIG.DEBUG_MODE) {
+                const timestamp = new Date().toLocaleTimeString();
+                console.log(`[${timestamp}] ${message}`, data || '');
+                
+                // Also show in UI
+                const debugDiv = document.getElementById('debugContent');
+                if (debugDiv) {
+                    debugDiv.innerHTML = `[${timestamp}] ${message}` + (data ? `<br><pre>${JSON.stringify(data, null, 2)}</pre>` : '');
+                }
+            }
+        }
+
+        function showError(message, technical = '') {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `
+                <strong>Error:</strong> ${message}
+                ${technical ? `<br><small>Detalles técnicos: ${technical}</small>` : ''}
+            `;
+            $chatArea.appendChild(errorDiv);
+            scrollToBottom();
+        }
+
+        // Timeout wrapper para fetch
+        function fetchWithTimeout(url, options, timeout = CONFIG.WEBHOOK.timeout) {
+            return Promise.race([
+                fetch(url, options),
+                new Promise((_, reject) =>
+                    setTimeout(() => reject(new Error('Timeout: La solicitud tardó demasiado')), timeout)
+                )
+            ]);
+        }
+
+        // Función mejorada para parsear respuestas
+        function parseWebhookResponse(data) {
+            logDebug('Parseando respuesta del webhook', data);
+            
+            if (!data) {
+                throw new Error('Respuesta vacía del servidor');
+            }
+
+            // Si es string directo
+            if (typeof data === 'string') {
+                return data.trim() || 'Respuesta vacía';
+            }
+
+            // Si es array
+            if (Array.isArray(data)) {
+                if (data.length === 0) {
+                    throw new Error('Array de respuesta vacío');
+                }
+                
+                const firstItem = data[0];
+                return firstItem?.text || 
+                       firstItem?.message || 
+                       firstItem?.content || 
+                       firstItem?.response ||
+                       JSON.stringify(firstItem);
+            }
+
+            // Si es objeto
+            if (typeof data === 'object') {
+                return data.text || 
+                       data.message || 
+                       data.content || 
+                       data.response ||
+                       data.output ||
+                       data.result ||
+                       JSON.stringify(data);
+            }
+
+            throw new Error('Formato de respuesta no reconocido');
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', async function() {
+            initializeChat();
+            focusInput();
+            
+            if (CONFIG.DEBUG_MODE) {
+                $debugInfo.style.display = 'block';
+                logDebug('Modo debug activado');
+            }
+        });
+
+        // Initialize the chat
+        function initializeChat() {
+            $loadingInfo.style.display = 'none';
+            $modelStatus.textContent = 'Alexa - Tu asistente virtual lista para responder tus inquietudes';
+            $statusIndicator.style.background = '#10a37f';
+            $sendButton.removeAttribute('disabled');
+            
+            logDebug('Chat inicializado correctamente');
+        }
+
+        // Form submission handler
+        $form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const messageText = $input.value.trim();
+            
+            if (messageText !== '' && !isTyping) {
+                await sendMessage(messageText);
+            }
+        });
+
+        // Función principal mejorada para enviar mensajes
+        async function sendMessage(messageText, retryCount = 0) {
+            if (isTyping) return;
+            
+            isTyping = true;
+            logDebug('Enviando mensaje', { messageText, retryCount });
+            
+            $input.value = '';
+            adjustTextareaHeight($input);
+            $sendButton.setAttribute('disabled', '');
+
+            // Crear nuevo chat si es necesario
+            if (!currentChatId) {
+                currentChatId = 'chat_' + Date.now();
+                const chatTitle = messageText.length > 30 ? messageText.substring(0, 30) + '...' : messageText;
+                chatHistory[currentChatId] = {
+                    title: chatTitle,
+                    messages: [],
+                    timestamp: new Date().toISOString()
+                };
+                logDebug('Nuevo chat creado', { chatId: currentChatId });
+            }
+
+            // Ocultar pantalla de bienvenida
+            document.getElementById('welcomeScreen').style.display = 'none';
+
+            // Agregar mensaje del usuario
+            addMessage(messageText, 'user');
+            const userMessage = {
+                role: 'user',
+                content: messageText,
+                timestamp: new Date().toISOString()
+            };
+            
+            chatHistory[currentChatId].messages.push(userMessage);
+
+            // Mostrar indicador de escritura
+            await new Promise(resolve => setTimeout(resolve, 300));
+            showTypingIndicator();
+
+            try {
+                // Preparar datos para webhook
+                const webhookData = {
+                    chatInput: messageText,
+                    sessionId: sessionId,
+                    timestamp: new Date().toISOString(),
+                    chatId: currentChatId,
+                    retryCount: retryCount
+                };
+
+                logDebug('Datos preparados para webhook', webhookData);
+
+                // Realizar solicitud al webhook con timeout
+                const response = await fetchWithTimeout(
+                    CONFIG.WEBHOOK.url,
+                    {
+                        method: CONFIG.WEBHOOK.method,
+                        headers: CONFIG.WEBHOOK.headers,
+                        body: JSON.stringify(webhookData)
+                    }
+                );
+
+                logDebug('Respuesta recibida del webhook', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    headers: Object.fromEntries(response.headers.entries())
+                });
+
+                // Verificar si la respuesta es exitosa
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    logDebug('Error HTTP del webhook', { status: response.status, errorText });
+                    
+                    throw new Error(`El servidor respondió con error ${response.status}: ${response.statusText}. ${errorText}`);
+                }
+
+                // Leer respuesta
+                const responseText = await response.text();
+                logDebug('Texto de respuesta crudo', responseText);
+
+                // Parsear JSON si es posible
+                let data;
+                try {
+                    data = JSON.parse(responseText);
+                    logDebug('Datos JSON parseados exitosamente', data);
+                } catch (parseError) {
+                    logDebug('No es JSON válido, usando como texto', parseError.message);
+                    data = responseText;
+                }
+
+                // Extraer mensaje de la respuesta
+                const botResponse = parseWebhookResponse(data);
+                logDebug('Mensaje extraído', botResponse);
+
+                if (!botResponse || botResponse.trim() === '') {
+                    throw new Error('El servidor no devolvió contenido válido');
+                }
+
+                // Simular delay de respuesta
+                await new Promise(resolve => setTimeout(resolve, Math.random() * 1000 + 500));
+                
+                // Ocultar indicador y mostrar respuesta
+                hideTypingIndicator();
+                
+                const $botMessageElement = addMessage("", 'bot');
+                const $botMessage = $botMessageElement.closest('.message');
+                $botMessage.classList.add('bot-message-appearing');
+
+                await simulateTypingWithFormat($botMessageElement, botResponse);
+
+                // Guardar mensaje en historial
+                const assistantMessage = {
+                    role: 'assistant',
+                    content: botResponse,
+                    timestamp: new Date().toISOString()
+                };
+                
+                chatHistory[currentChatId].messages.push(assistantMessage);
+                updateChatHistoryUI();
+
+                logDebug('Mensaje procesado exitosamente');
+
+            } catch (error) {
+                logDebug('Error al procesar mensaje', {
+                    error: error.message,
+                    stack: error.stack,
+                    retryCount
+                });
+                
+                hideTypingIndicator();
+
+                // Lógica de reintentos
+                if (retryCount < CONFIG.RETRY.maxAttempts - 1) {
+                    logDebug(`Reintentando... (${retryCount + 1}/${CONFIG.RETRY.maxAttempts})`);
+                    
+                    await new Promise(resolve => setTimeout(resolve, CONFIG.RETRY.delay * (retryCount + 1)));
+                    
+                    // Reintentar
+                    isTyping = false;
+                    return sendMessage(messageText, retryCount + 1);
+                }
+
+                // Mostrar error después de agotar reintentos
+                let errorMessage = 'Lo siento, no pude procesar tu mensaje. ';
+                
+                if (error.message.includes('Timeout')) {
+                    errorMessage += 'La conexión tardó demasiado. Por favor, intenta de nuevo.';
+                } else if (error.message.includes('fetch')) {
+                    errorMessage += 'Problema de conectividad. Verifica tu conexión a internet.';
+                } else if (error.message.includes('HTTP error') || error.message.includes('servidor respondió')) {
+                    errorMessage += 'El servidor está experimentando problemas técnicos.';
+                } else {
+                    errorMessage += 'Error técnico inesperado.';
+                }
+
+                await new Promise(resolve => setTimeout(resolve, 200));
+                addMessage(errorMessage, 'bot');
+                
+                if (CONFIG.DEBUG_MODE) {
+                    showError('Error técnico completo', error.message);
+                }
+            }
+
+            isTyping = false;
+            $sendButton.removeAttribute('disabled');
+            focusInput();
+        }
+
+        // Función para simular escritura progresiva CON formato mejorado
+        async function simulateTypingWithFormat(element, text) {
+            const words = text.split(' ');
+            let currentText = '';
+            
+            for (let i = 0; i < words.length; i++) {
+                currentText += (i > 0 ? ' ' : '') + words[i];
+                
+                element.innerHTML = formatBotMessage(currentText);
+                scrollToBottom();
+                
+                await new Promise(resolve => setTimeout(resolve, Math.random() * 80 + 40));
+            }
+        }
+
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            const avatarDiv = document.createElement('div');
+            avatarDiv.className = `message-avatar ${sender === 'user' ? 'user' : 'ai'}-avatar`;
+            avatarDiv.textContent = sender === 'user' ? 'You' : 'AI';
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            
+            if (sender === 'bot') {
+                if (text.trim() === '') {
+                    contentDiv.innerHTML = '<p style="margin-bottom: 16px; line-height: 1.6; color: #ffffff;"></p>';
+                } else {
+                    contentDiv.innerHTML = formatBotMessage(text);
+                }
+            } else {
+                const textElement = document.createElement('p');
+                textElement.textContent = text;
+                contentDiv.appendChild(textElement);
+            }
+            
+            messageDiv.appendChild(avatarDiv);
+            messageDiv.appendChild(contentDiv);
+            
+            $chatArea.appendChild(messageDiv);
+            scrollToBottom();
+            
+            return sender === 'bot' ? contentDiv : contentDiv.querySelector('p');
+        }
+
+        // Función MEJORADA para formatear mensajes del bot
+        function formatBotMessage(text) {
+            if (!text || text.trim() === '') return '<p style="margin-bottom: 16px; line-height: 1.6; color: #ffffff;"></p>';
+            
+            // Dividir el texto en secciones más inteligentemente
+            const sections = parseTextSections(text);
+            
+            return sections.map(section => processSection(section)).join('');
+        }
+
+        function parseTextSections(text) {
+            // Dividir por dobles saltos de línea primero
+            let sections = text.split(/\n\s*\n/).filter(s => s.trim());
+            
+            // Si no hay divisiones claras, usar lógica más sofisticada
+            if (sections.length <= 1) {
+                sections = smartTextSplit(text);
+            }
+            
+            return sections;
+        }
+
+        function smartTextSplit(text) {
+            const lines = text.split('\n').map(l => l.trim()).filter(l => l);
+            const sections = [];
+            let currentSection = [];
+            let inList = false;
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const isListItem = /^[\s]*[*\-•]\s+/.test(line) || /^[\s]*\d+\.\s+/.test(line);
+                const previousLine = i > 0 ? lines[i - 1] : '';
+                
+                if (isListItem) {
+                    // Si no estábamos en lista y hay contenido previo, crear nueva sección
+                    if (!inList && currentSection.length > 0 && !previousLine.endsWith(':')) {
+                        sections.push(currentSection.join(' '));
+                        currentSection = [];
+                    }
+                    currentSection.push(line);
+                    inList = true;
+                } else {
+                    // Si estábamos en lista, cerrar sección anterior
+                    if (inList && currentSection.length > 0) {
+                        sections.push(currentSection.join('\n'));
+                        currentSection = [];
+                    }
+                    currentSection.push(line);
+                    inList = false;
+                }
+            }
+            
+            if (currentSection.length > 0) {
+                sections.push(inList ? currentSection.join('\n') : currentSection.join(' '));
+            }
+            
+            return sections.length > 0 ? sections : [text];
+        }
+
+        function processSection(section) {
+            if (!section.trim()) return '';
+            
+            // Aplicar formato básico primero
+            let formatted = section
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color: #10a37f; text-decoration: underline; font-weight: 500;">$1</a>')
+                .replace(/\*\*([^*]+)\*\*/g, '<strong style="font-weight: 600; color: #ffffff;">$1</strong>')
+                .replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em style="font-style: italic; color: #e0e0e0;">$1</em>');
+            
+            // Detectar tipo de sección
+            const hasLists = /^[\s]*[*\-•]\s+|^[\s]*\d+\.\s+/m.test(formatted);
+            
+            if (hasLists) {
+                return processListSection(formatted);
+            } else {
+                return `<p style="margin-bottom: 16px; line-height: 1.6; color: #ffffff;">${formatted}</p>`;
+            }
+        }
+
+        function processListSection(section) {
+            const lines = section.split('\n').map(l => l.trim()).filter(l => l);
+            let result = '';
+            let introLines = [];
+            let currentList = [];
+            let listType = null;
+            
+            for (const line of lines) {
+                const unorderedMatch = /^[\s]*[*\-•]\s+(.+)/.exec(line);
+                const orderedMatch = /^[\s]*(\d+)\.\s+(.+)/.exec(line);
+                
+                if (unorderedMatch) {
+                    // Procesar introducción si existe
+                    if (introLines.length > 0) {
+                        result += `<p style="margin-bottom: 16px; line-height: 1.6; color: #ffffff;">${introLines.join(' ')}</p>`;
+                        introLines = [];
+                    }
+                    
+                    // Cambiar tipo de lista si es necesario
+                    if (listType !== 'ul' && currentList.length > 0) {
+                        result += buildList(currentList, listType);
+                        currentList = [];
+                    }
+                    
+                    listType = 'ul';
+                    currentList.push(unorderedMatch[1]);
+                    
+                } else if (orderedMatch) {
+                    // Procesar introducción si existe
+                    if (introLines.length > 0) {
+                        result += `<p style="margin-bottom: 16px; line-height: 1.6; color: #ffffff;">${introLines.join(' ')}</p>`;
+                        introLines = [];
+                    }
+                    
+                    // Cambiar tipo de lista si es necesario
+                    if (listType !== 'ol' && currentList.length > 0) {
+                        result += buildList(currentList, listType);
+                        currentList = [];
+                    }
+                    
+                    listType = 'ol';
+                    currentList.push(orderedMatch[2]);
+                    
+                } else {
+                    // Línea normal - puede ser introducción
+                    if (currentList.length > 0) {
+                        // Si ya tenemos lista, cerrarla primero
+                        result += buildList(currentList, listType);
+                        currentList = [];
+                        listType = null;
+                    }
+                    introLines.push(line);
+                }
+            }
+            
+            // Procesar lo que quede
+            if (introLines.length > 0) {
+                result += `<p style="margin-bottom: 16px; line-height: 1.6; color: #ffffff;">${introLines.join(' ')}</p>`;
+            }
+            
+            if (currentList.length > 0) {
+                result += buildList(currentList, listType);
+            }
+            
+            return result;
+        }
+
+        function buildList(items, type) {
+            const listItems = items.map(item => 
+                `<li style="margin-bottom: 8px; line-height: 1.5; color: #ffffff;">${item}</li>`
+            ).join('');
+            
+            const listStyle = `margin: 16px 0; padding-left: 24px; color: #ffffff;`;
+            
+            if (type === 'ul') {
+                return `<ul style="${listStyle} list-style-type: disc;">${listItems}</ul>`;
+            } else if (type === 'ol') {
+                return `<ol style="${listStyle}">${listItems}</ol>`;
+            }
+            
+            return '';
+        }
+
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typingIndicator';
+            typingDiv.className = 'message bot';
+            typingDiv.innerHTML = `
+                <div class="message-avatar ai-avatar">AI</div>
+                <div class="message-content">
+                    <div class="typing-indicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            `;
+            
+            $chatArea.appendChild(typingDiv);
+            scrollToBottom();
+        }
+
+        function hideTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function scrollToBottom() {
+            $chatArea.scrollTop = $chatArea.scrollHeight;
+        }
+
+        // Chat history management
+        function updateChatHistoryUI() {
+            const historyContainer = document.getElementById('chatHistory');
+            historyContainer.innerHTML = '';
+
+            const sortedChats = Object.entries(chatHistory)
+                .sort(([,a], [,b]) => new Date(b.timestamp) - new Date(a.timestamp));
+
+            sortedChats.forEach(([chatId, chat]) => {
+                const chatItem = document.createElement('div');
+                chatItem.className = `chat-item ${chatId === currentChatId ? 'active' : ''}`;
+                chatItem.textContent = chat.title;
+                chatItem.onclick = () => loadChat(chatId);
+                historyContainer.appendChild(chatItem);
+            });
+        }
+
+        function loadChat(chatId) {
+            if (isTyping) return;
+            
+            currentChatId = chatId;
+            const chat = chatHistory[chatId];
+            
+            $chatArea.innerHTML = '';
+            document.getElementById('welcomeScreen').style.display = 'none';
+
+            chat.messages.forEach(msg => {
+                const sender = msg.role === 'user' ? 'user' : 'bot';
+                addMessage(msg.content, sender);
+            });
+
+            updateChatHistoryUI();
+            focusInput();
+        }
+
+        function startNewChat() {
+            if (isTyping) return;
+            
+            currentChatId = null;
+            sessionId = generateSessionId();
+            
+            $chatArea.innerHTML = `
+                <div class="welcome-screen" id="welcomeScreen">
+                    <h1 class="welcome-title">¡Hola! Soy Alexa</h1>
+                    <p class="welcome-subtitle">Experta en Marketing y Ventas, Soluciones Tecnológicas, Seguridad Informática, Infraestructura Cloud, Privacidad Digital, Análisis de Datos y Desarrollo de Software de Digiticol</p>
+                    <div class="suggestions">
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Cómo puedo crear una estrategia de marketing para mi negocio?')">
+                            <div class="suggestion-title">Estrategia de Marketing</div>
+                            <div class="suggestion-desc">Ayuda para crear estrategias efectivas</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Qué contenido funciona mejor en redes sociales?')">
+                            <div class="suggestion-title">Redes Sociales</div>
+                            <div class="suggestion-desc">Consejos para contenido viral</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Cómo puedo mejorar mi marca personal?')">
+                            <div class="suggestion-title">Branding</div>
+                            <div class="suggestion-desc">Construcción y gestión de marca</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Qué técnicas de ventas son más efectivas?')">
+                            <div class="suggestion-title">Técnicas de Ventas</div>
+                            <div class="suggestion-desc">Estrategias para cerrar más ventas</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿Cómo puede ayudarme la inteligencia artificial en mi negocio?')">
+                            <div class="suggestion-title">IA para tu Negocio</div>
+                            <div class="suggestion-desc">Cómo usar la IA y qué ventajas trae para tu negocio</div>
+                        </div>
+                        <div class="suggestion-card" onclick="sendSuggestion('¿dónde operan y cómo puedo contactarlos?')">
+                            <div class="suggestion-title">Canales de distribución</div>
+                            <div class="suggestion-desc">Conoce nuestros canales de distribución</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            updateChatHistoryUI();
+            focusInput();
+        }
+
+        // Utility functions
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                if (!$sendButton.hasAttribute('disabled') && !isTyping) {
+                    $form.dispatchEvent(new Event('submit'));
+                }
+            }
+        }
+
+        function adjustTextareaHeight(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
+        }
+
+        async function sendSuggestion(suggestion) {
+            if (isTyping) return;
+            
+            $input.value = suggestion;
+            adjustTextareaHeight($input);
+            if (!$sendButton.hasAttribute('disabled')) {
+                await sendMessage(suggestion);
+            }
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.toggle('open');
+            
+            if (sidebar.classList.contains('open')) {
+                overlay.classList.add('show');
+            } else {
+                overlay.classList.remove('show');
+            }
+        }
+
+        function focusInput() {
+            setTimeout(() => {
+                if (!isTyping) {
+                    $input.focus();
+                }
+            }, 100);
+        }
+
+        // Make functions global for onclick handlers
+        window.startNewChat = startNewChat;
+        window.sendSuggestion = sendSuggestion;
+        window.toggleSidebar = toggleSidebar;
+        window.handleKeyPress = handleKeyPress;
+        window.adjustTextareaHeight = adjustTextareaHeight;
+
+        // Close sidebar on mobile when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (window.innerWidth <= 768 && 
+                !sidebar.contains(event.target) && 
+                !menuToggle.contains(event.target) && 
+                sidebar.classList.contains('open')) {
+                toggleSidebar();
+            }
+        });
+
+        // Prevent form submission on disabled state
+        $form.addEventListener('submit', function(event) {
+            if ($sendButton.hasAttribute('disabled') || isTyping) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            }
+        });
+
+        // Auto-resize textarea on input
+        $input.addEventListener('input', function() {
+            adjustTextareaHeight(this);
+        });
+
+        // Handle paste events
+        $input.addEventListener('paste', function() {
+            setTimeout(() => {
+                adjustTextareaHeight(this);
+            }, 0);
+        });
+
+        // Toggle debug info on click (mobile-friendly)
+        if (CONFIG.DEBUG_MODE) {
+            $debugInfo.addEventListener('click', function() {
+                this.style.display = this.style.display === 'none' ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
